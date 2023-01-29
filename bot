@@ -1,0 +1,11 @@
+import telebot
+
+
+TOKEN = '6022391066:AAGA241lRIXfGeNc-FkvaqWRSJUlLAQeiVA'
+bot = TeleBot(TOKEN)
+
+@bot.message_handler(content_types = ["text"])
+def repeat_all_massage(message):
+        bot.send_message(message.chat.id, message.text)
+
+bot.polling(none_stop=True, interval=0)
